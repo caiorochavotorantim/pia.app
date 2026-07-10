@@ -170,6 +170,81 @@ tr:hover td{background:#FAFBFF}
 .load-actions .btn{padding:14px 32px;font-size:14px}
 .spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
+/* Sortable + Pager */
+th.sortable{cursor:pointer;user-select:none;position:relative;transition:background .15s}
+th.sortable:hover{background:#EEF0FF;color:var(--brand-blue)}
+th.sortable .sort-ico{font-size:9px;opacity:.4;margin-left:4px}
+th.sortable.asc .sort-ico,th.sortable.desc .sort-ico{opacity:1;color:var(--brand-blue)}
+th.sortable.asc .sort-ico::before{content:'▲'}
+th.sortable.desc .sort-ico::before{content:'▼'}
+th.sortable.asc .sort-ico,th.sortable.desc .sort-ico{font-size:9px}
+th.sortable.asc .sort-ico:not(:empty),th.sortable.desc .sort-ico:not(:empty){display:inline-block}
+.pager{display:flex;justify-content:space-between;align-items:center;padding:14px 0 0;margin-top:12px;border-top:1px solid var(--border);gap:12px;flex-wrap:wrap}
+.pager-info{font-size:12px;color:var(--mut);font-weight:600}
+.pager-info b{color:var(--brand-dark)}
+.pager-controls{display:flex;gap:6px;align-items:center}
+.pager-btn{width:32px;height:32px;border:1px solid var(--border);background:#fff;border-radius:8px;cursor:pointer;font-weight:700;color:var(--text);font-size:12px;display:inline-flex;align-items:center;justify-content:center;transition:all .15s}
+.pager-btn:hover:not(:disabled){background:var(--brand-blue-l);border-color:var(--brand-blue);color:var(--brand-blue)}
+.pager-btn:disabled{opacity:.35;cursor:not-allowed}
+.pager-current{padding:0 14px;font-size:12.5px;font-weight:700;color:var(--brand-dark);background:var(--brand-blue-l);border-radius:8px;height:32px;display:inline-flex;align-items:center;letter-spacing:.5px}
+/* Anexo icons */
+.anexo-icons{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.anexo-icon{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .15s;border:1px solid var(--border);background:#fff;color:var(--brand-dark)}
+.anexo-icon:hover{background:var(--brand-blue-l);border-color:var(--brand-blue);color:var(--brand-blue);transform:translateY(-1px)}
+.anexo-icon.po{border-left:3px solid var(--brand-blue)}
+.anexo-icon.diag{border-left:3px solid var(--brand-purple)}
+.anexo-icon.bpm{border-left:3px solid var(--green)}
+.anexo-icon .anx-lbl{font-size:11px;font-weight:700}
+.anexo-empty{color:var(--mut);font-size:11.5px;font-style:italic}
+/* Toggle flag Plano de Ação */
+.flag-plano{display:flex;align-items:center;gap:12px;padding:14px;background:linear-gradient(135deg,#F3EDFF,#EEF0FF);border-radius:12px;margin:14px 0;border:1px solid var(--border)}
+.flag-plano input[type="checkbox"]{width:18px;height:18px;accent-color:var(--brand-purple);cursor:pointer}
+.flag-plano label{font-weight:700;font-size:13px;color:var(--brand-dark);cursor:pointer;margin:0}
+.flag-plano small{color:var(--mut);font-size:11px;font-weight:500;display:block;margin-top:2px}
+/* Section Plano de Ação (dentro do modal) */
+.pa-section{background:#F7F8FC;border-radius:12px;padding:16px;margin-top:12px;border-left:4px solid var(--brand-purple)}
+.pa-section h4{color:var(--brand-purple-d);font-size:13px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.pa-list{display:flex;flex-direction:column;gap:8px}
+.pa-item{background:#fff;border-radius:10px;padding:10px 12px;display:grid;grid-template-columns:1fr auto;gap:8px;border:1px solid var(--border);align-items:center}
+.pa-item .pa-title{font-size:12.5px;font-weight:700;color:var(--brand-dark)}
+.pa-item .pa-meta{font-size:11px;color:var(--mut);margin-top:2px}
+.pa-item .pa-actions{display:flex;gap:6px}
+.pa-status{display:inline-block;padding:3px 9px;border-radius:99px;font-size:10px;font-weight:800;letter-spacing:.4px}
+.pa-todo{background:#F1F5F9;color:#475569}
+.pa-doing{background:#FEF3C7;color:#92400E}
+.pa-done{background:#D1FAE5;color:#065F46}
+.pa-blocked{background:#FEE2E2;color:#991B1B}
+/* Kanban board */
+.kanban{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+.kb-col{background:#F7F8FC;border-radius:12px;padding:12px;min-height:400px;border-top:4px solid var(--brand-gray)}
+.kb-col.todo{border-top-color:#9AA0A6}
+.kb-col.doing{border-top-color:var(--yellow)}
+.kb-col.done{border-top-color:var(--green)}
+.kb-col.blocked{border-top-color:var(--red)}
+.kb-col h3{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--brand-dark);margin-bottom:12px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+.kb-col h3 .kb-count{background:#fff;color:var(--brand-dark);padding:2px 9px;border-radius:99px;font-size:10px;font-weight:800}
+.kb-card{background:#fff;border-radius:10px;padding:12px;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);cursor:pointer;transition:all .15s;border:1px solid var(--border)}
+.kb-card:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.1);border-color:var(--brand-blue)}
+.kb-card .kb-title{font-size:12.5px;font-weight:700;color:var(--brand-dark);margin-bottom:6px;line-height:1.35}
+.kb-card .kb-desc{font-size:11px;color:var(--mut);line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.kb-card .kb-meta{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;color:var(--mut);gap:8px;flex-wrap:wrap}
+.kb-card .kb-pia{font-weight:700;color:var(--brand-blue);font-size:10.5px;padding:2px 6px;background:var(--brand-blue-l);border-radius:5px}
+.kb-card .kb-owner{font-weight:600;display:flex;align-items:center;gap:4px}
+.kb-card .kb-date{font-weight:700;color:var(--brand-dark)}
+.kb-card .kb-date.late{color:var(--red)}
+@media(max-width:1100px){.kanban{grid-template-columns:repeat(2,1fr)}}
+/* Viewer modal */
+.viewer-modal .modal-box{max-width:1200px;height:90vh}
+.viewer-modal .modal-body{padding:0;height:calc(90vh - 120px);overflow:hidden}
+.viewer-modal iframe{width:100%;height:100%;border:0}
+.viewer-fallback{padding:60px 30px;text-align:center;color:var(--mut)}
+.viewer-fallback .icon{font-size:64px;margin-bottom:16px}
+.viewer-fallback h3{color:var(--brand-dark);font-size:18px;margin-bottom:8px}
+.viewer-fallback p{font-size:13px;margin-bottom:20px}
+/* Datas fields */
+.dates-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 16px;background:linear-gradient(135deg,#EEF0FF,#F3EDFF);border-radius:12px;margin-bottom:14px}
+.dates-row .field{margin:0}
+.dates-row .field label{color:var(--brand-purple-d);font-weight:800}
 </style>
 </head>
 <body>
@@ -197,6 +272,7 @@ tr:hover td{background:#FAFBFF}
  <div class="nav-sub">
    <a class="nav-sub-a active" onclick="setTab(this,'p-base')"><i>▤</i>Base e Análises<span class="sub-badge" id="badge-pia">0</span></a>
    <a class="nav-sub-a" onclick="setTab(this,'p-res')"><i>▮</i>Resultados</a>
+   <a class="nav-sub-a" onclick="setTab(this,'p-planos')"><i>◈</i>Planos de Ação<span class="sub-badge" id="badge-pa">0</span></a>
    <a class="nav-sub-a" onclick="setTab(this,'p-calc')"><i>◈</i>Calculadora</a>
    <a class="nav-sub-a" onclick="setTab(this,'p-par')"><i>◈</i>Parâmetros</a>
  </div>
@@ -225,30 +301,48 @@ tr:hover td{background:#FAFBFF}
 <!-- BASE -->
 <section class="pane active" id="p-base">
  <div class="filters-inline">
+  <div class="field"><label>Processo</label><input id="f-proc" placeholder="Digite parte do nome..."/></div>
   <div class="field"><label>Área</label><input id="f-ger" list="dl-areas-f" placeholder="Digite ou selecione..."/><datalist id="dl-areas-f"></datalist></div>
   <div class="field"><label>Serviço</label><input id="f-ana" list="dl-servs-f" placeholder="Digite ou selecione..."/><datalist id="dl-servs-f"></datalist></div>
+  <div class="field"><label>Item ServiceNow</label><input id="f-item" list="dl-items-f" placeholder="Digite ou selecione..."/><datalist id="dl-items-f"></datalist></div>
+  <div class="field"><label>Maturidade</label><select id="f-mat"><option value="">Todas</option><option>🟢 Plena</option><option>🔵 Funcional</option><option>🟡 Estruturada</option><option>🔴 Incipiente</option></select></div>
   <div class="field"><label>Status</label><select id="f-stat"><option value="">Todos</option><option>Serviço cadastrado</option><option>Sem PO</option><option>N/A</option><option>Base cadastrada</option><option>Output IA</option><option>Em Validação</option><option>Publicado</option></select></div>
   <div class="field-actions">
    <button class="btn btn-ghost" onclick="clearFilters()">Limpar</button>
-   <button class="btn btn-primary" onclick="renderPias()">🔎 Pesquisar</button>
+   <button class="btn btn-primary" onclick="pgBase.page=1;renderPias()">🔎 Pesquisar</button>
   </div>
  </div>
  <div class="card">
-  <h2><i>▤</i>PIÁs cadastrados (<span id="pia-count">0</span>)</h2>
-  <div style="overflow-x:auto"><table>
-   <thead><tr><th>Processo</th><th>Serviço</th><th>Etapas (M/A/D)</th><th>FTE</th><th>Volume</th><th>AE%</th><th>AV%</th><th>Maturidade</th><th>Status</th><th style="width:70px">Ações</th></tr></thead>
+  <h2 style="display:flex;justify-content:space-between;align-items:center"><span style="display:flex;align-items:center;gap:10px"><i>▤</i>PIÁs cadastrados (<span id="pia-count">0</span>)</span><button class="btn btn-ghost btn-sm" onclick="exportRelatorio('base')">📥 Extrair relatório em Excel</button></h2>
+  <div style="overflow-x:auto"><table id="tbl-pias">
+   <thead><tr>
+    <th data-sort="nome" onclick="sortBase('nome')" class="sortable">Processo <span class="sort-ico">⇅</span></th>
+    <th data-sort="ana" onclick="sortBase('ana')" class="sortable">Serviço <span class="sort-ico">⇅</span></th>
+    <th data-sort="etapas" onclick="sortBase('etapas')" class="sortable">Etapas (M/A/D) <span class="sort-ico">⇅</span></th>
+    <th data-sort="fte" onclick="sortBase('fte')" class="sortable">FTE <span class="sort-ico">⇅</span></th>
+    <th data-sort="volume" onclick="sortBase('volume')" class="sortable">Volume <span class="sort-ico">⇅</span></th>
+    <th data-sort="ae" onclick="sortBase('ae')" class="sortable">AE% <span class="sort-ico">⇅</span></th>
+    <th data-sort="av" onclick="sortBase('av')" class="sortable">AV% <span class="sort-ico">⇅</span></th>
+    <th data-sort="mat" onclick="sortBase('mat')" class="sortable">Maturidade <span class="sort-ico">⇅</span></th>
+    <th data-sort="stat" onclick="sortBase('stat')" class="sortable">Status <span class="sort-ico">⇅</span></th>
+    <th style="width:70px">Ações</th>
+   </tr></thead>
    <tbody id="tbody-pias"></tbody>
   </table></div>
+  <div class="pager" id="pager-base"></div>
  </div>
 </section>
 
 <!-- RES -->
 <section class="pane" id="p-res">
  <div class="filters-inline">
+  <div class="field"><label>Processo</label><input id="f-proc-r" placeholder="Digite parte do nome..."/></div>
   <div class="field"><label>Área</label><input id="f-ger-r" list="dl-areas-f" placeholder="Digite ou selecione..."/></div>
   <div class="field"><label>Serviço</label><input id="f-ana-r" list="dl-servs-f" placeholder="Digite ou selecione..."/></div>
+  <div class="field"><label>Item ServiceNow</label><input id="f-item-r" list="dl-items-f" placeholder="Digite ou selecione..."/></div>
+  <div class="field"><label>Maturidade</label><select id="f-mat-r"><option value="">Todas</option><option>🟢 Plena</option><option>🔵 Funcional</option><option>🟡 Estruturada</option><option>🔴 Incipiente</option></select></div>
   <div class="field"><label>Status</label><select id="f-stat-r"><option value="">Todos</option><option>Serviço cadastrado</option><option>Sem PO</option><option>N/A</option><option>Base cadastrada</option><option>Output IA</option><option>Em Validação</option><option>Publicado</option></select></div>
-  <div class="field-actions"><button class="btn btn-ghost" onclick="clearFiltersRes()">Limpar</button><button class="btn btn-primary" onclick="renderResultados()">🔎 Pesquisar</button></div>
+  <div class="field-actions"><button class="btn btn-ghost" onclick="clearFiltersRes()">Limpar</button><button class="btn btn-primary" onclick="pgRes.page=1;renderResultados()">🔎 Pesquisar</button></div>
  </div>
  <div class="kpis" id="kpis-res"></div>
  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-bottom:18px">
@@ -268,10 +362,46 @@ tr:hover td{background:#FAFBFF}
   </div>
  </div>
  <div class="card">
-  <h2><i>▮</i>Comparativo</h2>
+  <h2 style="display:flex;justify-content:space-between;align-items:center"><span style="display:flex;align-items:center;gap:10px"><i>▮</i>Comparativo</span><button class="btn btn-ghost btn-sm" onclick="exportRelatorio('res')">📥 Extrair relatório em Excel</button></h2>
   <div style="overflow-x:auto"><table>
    <thead><tr><th>Processo</th><th>Serviço</th><th>FTE</th><th>Volume</th><th>Etapas</th><th>M/A/D</th><th>AE%</th><th>AV%</th><th>% Aut.</th><th>Densidade</th><th>Maturidade</th></tr></thead>
    <tbody id="tbody-res"></tbody>
+  </table></div>
+  <div class="pager" id="pager-res"></div>
+ </div>
+</section>
+
+<!-- PLANOS DE AÇÃO (nova aba) -->
+<section class="pane" id="p-planos">
+ <div class="filters-inline">
+  <div class="field"><label>PIÁ</label><input id="fpa-pia" placeholder="Nome do processo..."/></div>
+  <div class="field"><label>Responsável</label><input id="fpa-resp" placeholder="Nome..."/></div>
+  <div class="field"><label>Status</label><select id="fpa-stat"><option value="">Todos</option><option>A Fazer</option><option>Em Andamento</option><option>Concluído</option><option>Bloqueado</option></select></div>
+  <div class="field-actions">
+   <button class="btn btn-ghost" onclick="clearFiltersPA()">Limpar</button>
+   <button class="btn btn-primary" onclick="renderPlanosAcao()">🔎 Pesquisar</button>
+  </div>
+ </div>
+
+ <div class="kpis" id="kpis-pa"></div>
+
+ <div class="card">
+  <h2 style="display:flex;justify-content:space-between;align-items:center">
+   <span style="display:flex;align-items:center;gap:10px"><i>▦</i>Kanban de Planos de Ação</span>
+   <div style="display:flex;gap:8px">
+    <button class="btn btn-ghost btn-sm" onclick="exportPlanosAcao()">📥 Exportar Excel</button>
+    <button class="btn btn-primary btn-sm" onclick="openPAModal()">+ Novo Plano</button>
+   </div>
+  </h2>
+  <p style="font-size:12px;color:var(--mut);margin-bottom:12px">Cada plano de ação está vinculado a um PIÁ. Clique em um cartão para editar.</p>
+  <div class="kanban" id="kanban-pa"></div>
+ </div>
+
+ <div class="card">
+  <h2><i>▮</i>Lista completa</h2>
+  <div style="overflow-x:auto"><table>
+   <thead><tr><th>Plano</th><th>PIÁ Vinculado</th><th>Descrição/Ação</th><th>Responsável</th><th>Prazo</th><th>Status</th><th style="width:80px">Ações</th></tr></thead>
+   <tbody id="tbody-pa"></tbody>
   </table></div>
  </div>
 </section>
@@ -334,6 +464,13 @@ tr:hover td{background:#FAFBFF}
     <div class="field"><label>corte_densidade_alta (%)</label><input type="number" id="p-corte-dens-alta" step="1"/></div>
     <div class="field"><label>corte_densidade_critica (%)</label><input type="number" id="p-corte-dens-crit" step="1"/></div>
    </div>
+  </div>
+
+  <div class="q-card" style="border-left-color:var(--brand-purple-d)"><h4>📅 Ciclo de Análise <span class="tooltip-icon" id="tip-analise">ℹ</span></h4>
+   <div class="row">
+    <div class="field"><label>meses_proxima_analise</label><input type="number" id="p-meses-analise" step="1" min="1" max="24"/></div>
+   </div>
+   <small class="help">Meses entre a data da análise e a próxima análise agendada. Aplicado automaticamente ao criar/editar um PIÁ.</small>
   </div>
 
   <div class="q-card" style="border-left-color:var(--green)"><h4>💼 FTE Evitado (Calculadora) <span class="tooltip-icon" id="tip-fte-evit">ℹ</span></h4>
@@ -412,6 +549,17 @@ tr:hover td{background:#FAFBFF}
   <div class="modal-body">
    <input type="hidden" id="mf-id"/>
    <div class="row"><div class="field" style="flex:2"><label>Nome do processo *</label><input id="mf-nome"/></div></div>
+   <!-- Datas de análise (no topo) -->
+   <div class="dates-row">
+    <div class="field">
+     <label>📅 Data da Análise</label>
+     <input type="date" id="mf-dt-analise" onchange="autoNextAnalise()"/>
+    </div>
+    <div class="field">
+     <label>🔁 Próxima Análise (auto)</label>
+     <input type="date" id="mf-dt-proxima"/>
+    </div>
+   </div>
    <div style="padding:12px 14px;background:var(--brand-blue-l);border-radius:10px;font-size:11.5px;color:var(--brand-blue);margin-bottom:10px;font-weight:600">
     💡 Digite ou selecione. Cascata: Serviço → Subserviço → Item ServiceNow → Área (auto).
    </div>
@@ -447,9 +595,30 @@ tr:hover td{background:#FAFBFF}
     <div class="field"><label>Qualidade Q</label><select id="mf-q"><option>Q0 · Eliminar/Automatizar</option><option>Q1 · Padronizar/Integrar</option><option>Q2 · Otimizar/Expandir</option><option>Q3 · Reduzir exceções</option><option>Q4 · Manter/Escalar</option></select></div>
    </div>
    <div class="field"><label>Direcionador</label><input id="mf-dir"/></div>
-   <div class="field"><label>Descrição</label><textarea id="mf-desc" rows="2"></textarea></div>
-   <div class="field"><label>Consideração da IA</label><textarea id="mf-ia" rows="2"></textarea></div>
-   <div class="field"><label>Anexos</label><input id="mf-anexos"/></div>
+   <div class="field"><label>Descrição do Processo</label><textarea id="mf-desc" rows="2"></textarea></div>
+   <div class="field"><label>Considerações do Processo</label><textarea id="mf-ia" rows="2"></textarea></div>
+
+   <h4 style="font-size:12px;color:var(--brand-blue-d);margin:16px 0 8px;text-transform:uppercase">📎 Anexos (links)</h4>
+   <div class="row">
+    <div class="field"><label>📘 Anexo PO</label><input id="mf-anexo-po" placeholder="https://..."/></div>
+    <div class="field"><label>📊 Anexo Diagnóstico</label><input id="mf-anexo-diag" placeholder="https://..."/></div>
+    <div class="field"><label>🔄 Anexo BPM</label><input id="mf-anexo-bpm" placeholder="https://..."/></div>
+   </div>
+   <small style="color:var(--mut);font-size:11px">Cole a URL do arquivo (SharePoint, OneDrive, GitHub, etc.). Aparecerá como ícone clicável na visualização.</small>
+
+   <!-- FLAG PLANO DE AÇÃO -->
+   <div class="flag-plano">
+    <input type="checkbox" id="mf-tem-pa" onchange="togglePASection()"/>
+    <label for="mf-tem-pa">
+     🎯 Tem Plano de Ação vinculado a este PIÁ?
+     <small>Marque para cadastrar/visualizar planos vinculados</small>
+    </label>
+   </div>
+
+   <div class="pa-section" id="mf-pa-section" style="display:none">
+    <h4>🎯 Planos de Ação deste PIÁ <button class="btn btn-primary btn-sm" style="margin-left:auto" onclick="openPAModal(null, currentId)">+ Novo Plano</button></h4>
+    <div class="pa-list" id="mf-pa-list"></div>
+   </div>
    <div style="margin-top:14px;padding:16px;background:var(--brand-blue-l);border-radius:12px;font-size:12.5px">
     <div style="font-weight:700;margin-bottom:10px;color:var(--brand-blue)">💡 Cálculos automáticos (ao vivo):</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px">
@@ -491,6 +660,51 @@ tr:hover td{background:#FAFBFF}
    <button class="btn btn-ghost" onclick="closeModal('modal-tips')">Cancelar</button>
    <button class="btn btn-primary" onclick="saveTips()">💾 Salvar descrições</button>
   </div>
+ </div>
+</div>
+
+<!-- MODAL PLANO DE AÇÃO -->
+<div class="modal-overlay" id="modal-pa" onclick="if(event.target===this)closeModal('modal-pa')">
+ <div class="modal-box" style="max-width:640px">
+  <div class="modal-head"><h3>🎯 Plano de Ação <small id="pa-name">Novo</small></h3><button class="modal-close" onclick="closeModal('modal-pa')">✕</button></div>
+  <div class="modal-body">
+   <input type="hidden" id="pa-idx"/>
+   <input type="hidden" id="pa-piaid"/>
+   <div class="field"><label>PIÁ vinculado *</label><select id="pa-piasel"></select></div>
+   <div class="field"><label>Nome do Plano *</label><input id="pa-nome" placeholder="Ex: Automatizar validação..."/></div>
+   <div class="field"><label>Descrição / Ação (o que fazer?)</label><textarea id="pa-desc" rows="3" placeholder="Descreva a ação..."></textarea></div>
+   <div class="row">
+    <div class="field"><label>Responsável (Quem?)</label><input id="pa-resp" placeholder="Nome do responsável"/></div>
+    <div class="field"><label>Prazo (Quando?)</label><input type="date" id="pa-prazo"/></div>
+   </div>
+   <div class="field"><label>Status</label>
+    <select id="pa-stat">
+     <option value="A Fazer">📋 A Fazer</option>
+     <option value="Em Andamento">🔄 Em Andamento</option>
+     <option value="Concluído">✅ Concluído</option>
+     <option value="Bloqueado">🚫 Bloqueado</option>
+    </select>
+   </div>
+  </div>
+  <div class="modal-footer">
+   <button class="btn btn-danger" id="btn-del-pa" onclick="deletePA()" style="margin-right:auto;display:none">🗑</button>
+   <button class="btn btn-ghost" onclick="closeModal('modal-pa')">Cancelar</button>
+   <button class="btn btn-primary" onclick="savePA()">💾 Salvar</button>
+  </div>
+ </div>
+</div>
+
+<!-- MODAL VIEWER (anexos) -->
+<div class="modal-overlay viewer-modal" id="modal-viewer" onclick="if(event.target===this)closeModal('modal-viewer')">
+ <div class="modal-box">
+  <div class="modal-head">
+   <h3 id="viewer-title">👁 Visualizar anexo</h3>
+   <div style="display:flex;gap:8px">
+    <a id="viewer-open-new" href="#" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" style="background:rgba(255,255,255,.15);color:#fff;border:0">↗ Abrir em nova aba</a>
+    <button class="modal-close" onclick="closeModal('modal-viewer')">✕</button>
+   </div>
+  </div>
+  <div class="modal-body" id="viewer-body"></div>
  </div>
 </div>
 
@@ -544,7 +758,7 @@ tr:hover td{background:#FAFBFF}
 
 <script>
 /* ===== ESTADO ===== */
-var db = {pias:[], params:{}, servicos:[], areas:[], usuarios:[], historico:[], tips:{}, loaded:false, filename:'PIA_Banco_de_Dados_v5.xlsx'};
+var db = {pias:[], params:{}, servicos:[], areas:[], usuarios:[], historico:[], tips:{}, planos:[], loaded:false, filename:'PIA_Banco_de_Dados_v6.xlsx'};
 var currentId = null, editingFromView = null;
 var fileHandle = null;
 var supportsFSA = 'showOpenFilePicker' in window;
@@ -562,7 +776,8 @@ var DEFAULT_TIPS = {
  'pesos-q':'Framework Todos contra Todos aplicado às dimensões da Qualidade da Automação. Fonte: Value Office v0.',
  'pesos-g':'Framework Todos contra Todos aplicado às dimensões do Grau de Automação. Fonte: Value Office v0.',
  'faixas-n':'Limites que classificam o Nível de Automação: N0 Manual · N1 Parcial · N2 Alta · N3 Touchless.',
- 'faixas-q':'Limites da Qualidade Q: Q0 Eliminar · Q1 Padronizar · Q2 Otimizar · Q3 Reduzir exceções · Q4 Manter/Escalar.'
+ 'faixas-q':'Limites da Qualidade Q: Q0 Eliminar · Q1 Padronizar · Q2 Otimizar · Q3 Reduzir exceções · Q4 Manter/Escalar.',
+ 'analise':'Ciclo padrão de análise. Ao cadastrar/editar um PIÁ, a próxima análise é calculada automaticamente como data_análise + N meses.'
 };
 
 /* ===== LOGIN ===== */
@@ -638,11 +853,35 @@ function parseWorkbook(wb){
     q:r['Qualidade Q']||'Q0 · Eliminar/Automatizar',
     dir:r['Direcionador']||'',
     stat:r['Status']||'Base cadastrada',
+    dtAnalise:r['Data Análise']||'',
+    dtProxima:r['Data Próxima Análise']||'',
     dtCad:r['Data Cadastro']||'',
     dtUpd:r['Última Atualização']||'',
-    desc:r['Descrição']||'',
-    ia:r['Consideração IA']||'',
+    desc:r['Descrição do Processo']||r['Descrição']||'',
+    ia:r['Considerações do Processo']||r['Consideração IA']||'',
+    anexoPO:r['Anexo PO']||'',
+    anexoDiag:r['Anexo Diagnóstico']||'',
+    anexoBPM:r['Anexo BPM']||'',
+    temPA:r['Tem Plano de Ação']||'Não',
     anexos:r['Anexos']||''
+   };
+  });
+ }
+ // Planos de Ação
+ var wsPA = wb.Sheets['PlanosAcao'];
+ if(wsPA){
+  db.planos = XLSX.utils.sheet_to_json(wsPA,{defval:''}).map(function(r){
+   return {
+    id:r['ID']||Date.now()+Math.random(),
+    piaId:r['PIA_ID']||'',
+    piaNome:r['PIA Nome']||'',
+    nome:r['Nome do Plano']||'',
+    desc:r['Descrição/Ação']||r['Descrição']||'',
+    resp:r['Responsável']||'',
+    prazo:r['Data Prazo']||r['Prazo']||'',
+    stat:r['Status']||'A Fazer',
+    dtCad:r['Data Criação']||'',
+    dtUpd:r['Data Atualização']||''
    };
   });
  }
@@ -688,11 +927,25 @@ async function exportExcel(){
    'Etapas Manuais (M)':v.m,'Etapas Automáticas (A)':v.a,'Etapas Decisão (D)':v.d,
    'AE Estrutural (%)':c.ae,'AV Volumétrica (%)':c.av,'% Automação Média':c.am,
    'Densidade Decisória (%)':c.dens,'Maturidade':c.mat,'Nível N':v.n,'Grau G':v.g,'Qualidade Q':v.q,
-   'Direcionador':v.dir,'Status':v.stat,'Data Cadastro':v.dtCad,'Última Atualização':v.dtUpd,
-   'Descrição':v.desc,'Consideração IA':v.ia,'Anexos':v.anexos
+   'Direcionador':v.dir,'Status':v.stat,
+   'Data Análise':v.dtAnalise||'','Data Próxima Análise':v.dtProxima||'',
+   'Data Cadastro':v.dtCad,'Última Atualização':v.dtUpd,
+   'Descrição do Processo':v.desc,'Considerações do Processo':v.ia,
+   'Anexo PO':v.anexoPO||'','Anexo Diagnóstico':v.anexoDiag||'','Anexo BPM':v.anexoBPM||'',
+   'Tem Plano de Ação':v.temPA||'Não'
   };
  });
  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(out), 'PIAs');
+ // PlanosAcao
+ var planosOut = db.planos.map(function(p){
+  return {
+   'ID':p.id,'PIA_ID':p.piaId,'PIA Nome':p.piaNome,
+   'Nome do Plano':p.nome,'Descrição/Ação':p.desc,'Responsável':p.resp,
+   'Data Prazo':p.prazo,'Status':p.stat,
+   'Data Criação':p.dtCad,'Data Atualização':p.dtUpd
+  };
+ });
+ XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(planosOut),'PlanosAcao');
 
  var pOut = [];
  Object.keys(db.params).forEach(function(k){pOut.push({'Parâmetro':k,'Valor':db.params[k]});});
@@ -744,6 +997,7 @@ function updateAllViews(){
  applyTips();
  renderPias();
  renderResultados();
+ renderPlanosAcao();
  renderDefinicoes();
  updateStatus();
  calcAll();
@@ -770,13 +1024,18 @@ function setupSelects(){
  cachedServicos = null;
  var servs = getServsUnicos();
  var areas = getAreasUnicas();
+ var itens = uniq(db.servicos.map(function(s){return s.item;}).concat(db.pias.map(function(v){return v.item;})));
  var optArea = areas.map(function(g){return '<option value="'+esc(g)+'">';}).join('');
  var optServ = servs.map(function(s){return '<option value="'+esc(s)+'">';}).join('');
+ var optItem = itens.map(function(i){return '<option value="'+esc(i)+'">';}).join('');
  // Filtros e forms usam mesmos datalists
  document.getElementById('dl-areas-f').innerHTML = optArea;
  document.getElementById('dl-servs-f').innerHTML = optServ;
  document.getElementById('dl-servs').innerHTML = optServ;
  document.getElementById('dl-areas').innerHTML = optArea;
+ // Datalist novo para o filtro de Item ServiceNow (usado em Base e Resultados)
+ var dlItemsF = document.getElementById('dl-items-f');
+ if(dlItemsF) dlItemsF.innerHTML = optItem;
 }
 function esc(s){return String(s).replace(/"/g,'&quot;');}
 
@@ -815,21 +1074,100 @@ function updateStatus(){
 }
 
 function filterList(pref){
+ var fp=(document.getElementById('f-proc'+pref)?.value||'').trim().toLowerCase();
  var fg=(document.getElementById('f-ger'+pref).value||'').trim().toLowerCase();
  var fa=(document.getElementById('f-ana'+pref).value||'').trim().toLowerCase();
+ var fi=(document.getElementById('f-item'+pref)?.value||'').trim().toLowerCase();
+ var fm=(document.getElementById('f-mat'+pref)?.value||'').trim();
  var fs=document.getElementById('f-stat'+pref).value;
  return db.pias.filter(function(v){
+  if(fp && v.nome.toLowerCase().indexOf(fp)===-1) return false;
   if(fg && v.ger.toLowerCase().indexOf(fg)===-1) return false;
   if(fa && v.ana.toLowerCase().indexOf(fa)===-1) return false;
+  if(fi && (v.item||'').toLowerCase().indexOf(fi)===-1) return false;
+  if(fm){
+   var c = calcPia(v);
+   if(c.mat !== fm) return false;
+  }
   if(fs && v.stat!==fs) return false;
   return true;
  });
 }
 
+/* Paginação e ordenação */
+var PAGE_SIZE = 10;
+var pgBase = {sort:null, dir:'asc', page:1};
+var pgRes = {page:1};
+
+function sortBase(field){
+ if(pgBase.sort===field) pgBase.dir = pgBase.dir==='asc'?'desc':'asc';
+ else {pgBase.sort=field; pgBase.dir='asc';}
+ pgBase.page = 1;
+ renderPias();
+}
+
+function applySortBase(list){
+ if(!pgBase.sort) return list;
+ var f=pgBase.sort, dir=pgBase.dir==='asc'?1:-1;
+ var getVal = function(v){
+  var c = calcPia(v);
+  switch(f){
+   case 'nome': return (v.nome||'').toLowerCase();
+   case 'ana': return (v.ana||'').toLowerCase();
+   case 'etapas': return v.m+v.a+v.d;
+   case 'fte': return v.fte||0;
+   case 'volume': return (v.vm||0)+(v.va||0);
+   case 'ae': return c.ae;
+   case 'av': return c.av;
+   case 'mat':
+    var order={'🟢 Plena':4,'🔵 Funcional':3,'🟡 Estruturada':2,'🔴 Incipiente':1};
+    return order[c.mat]||0;
+   case 'stat': return (v.stat||'').toLowerCase();
+   default: return 0;
+  }
+ };
+ return list.slice().sort(function(a,b){
+  var va=getVal(a), vb=getVal(b);
+  if(typeof va==='string'){return va.localeCompare(vb,'pt-BR')*dir;}
+  return (va-vb)*dir;
+ });
+}
+
+function updateSortHeaders(){
+ document.querySelectorAll('#tbl-pias th.sortable').forEach(function(th){
+  th.classList.remove('asc','desc');
+  if(th.dataset.sort===pgBase.sort) th.classList.add(pgBase.dir);
+ });
+}
+
+function renderPager(elId, page, totalItems, onGo){
+ var el = document.getElementById(elId);
+ var totalPages = Math.max(1, Math.ceil(totalItems/PAGE_SIZE));
+ if(page>totalPages) page = totalPages;
+ var first = totalItems===0?0:((page-1)*PAGE_SIZE+1);
+ var last = Math.min(page*PAGE_SIZE, totalItems);
+ el.innerHTML = '<div class="pager-info">Exibindo <b>'+first+'-'+last+'</b> de <b>'+totalItems+'</b> registros</div>'
+  +'<div class="pager-controls">'
+  +'<button class="pager-btn" '+(page<=1?'disabled':'')+' onclick="'+onGo+'(1)" title="Primeira">«</button>'
+  +'<button class="pager-btn" '+(page<=1?'disabled':'')+' onclick="'+onGo+'('+(page-1)+')" title="Anterior">‹</button>'
+  +'<span class="pager-current">'+page+' / '+totalPages+'</span>'
+  +'<button class="pager-btn" '+(page>=totalPages?'disabled':'')+' onclick="'+onGo+'('+(page+1)+')" title="Próxima">›</button>'
+  +'<button class="pager-btn" '+(page>=totalPages?'disabled':'')+' onclick="'+onGo+'('+totalPages+')" title="Última">»</button>'
+  +'</div>';
+ return page;
+}
+function goBasePage(p){pgBase.page=p;renderPias();}
+function goResPage(p){pgRes.page=p;renderResultados();}
+
 function renderPias(){
- var list = filterList('');
+ var full = filterList('');
+ var sorted = applySortBase(full);
+ var total = sorted.length;
+ pgBase.page = renderPager('pager-base', pgBase.page, total, 'goBasePage');
+ var start = (pgBase.page-1)*PAGE_SIZE;
+ var list = sorted.slice(start, start+PAGE_SIZE);
  var tb = document.getElementById('tbody-pias');
- if(!list.length){
+ if(!total){
   tb.innerHTML='<tr><td colspan="10" style="text-align:center;padding:30px;color:var(--mut)">Nenhum PIÁ encontrado. <a href="#" onclick="openForm()" style="color:var(--brand-blue);font-weight:700">Cadastrar</a></td></tr>';
  } else {
   tb.innerHTML = list.map(function(v){
@@ -840,7 +1178,8 @@ function renderPias(){
    return '<tr class="row-clickable" onclick="openView(\''+v.id+'\')"><td><b>'+esc(v.nome)+'</b><small>'+esc(v.item||'')+'</small></td><td>'+esc(v.ana)+'</td><td><div class="stack" style="width:140px"><span class="st-m" style="width:'+pm+'%">'+v.m+'</span><span class="st-a" style="width:'+pa+'%">'+v.a+'</span><span class="st-d" style="width:'+pd+'%">'+v.d+'</span></div></td><td>'+v.fte.toFixed(2).replace('.',',')+'</td><td>'+(v.vm+v.va).toLocaleString('pt-BR')+'</td><td>'+c.ae.toFixed(2).replace('.',',')+'%</td><td>'+c.av.toFixed(2).replace('.',',')+'%</td><td><span class="mat-badge '+matCls+'">'+c.mat+'</span></td><td><span class="pill '+statCls+'">'+v.stat+'</span></td><td><button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openForm(\''+v.id+'\')">✏️</button></td></tr>';
   }).join('');
  }
- document.getElementById('pia-count').innerText = list.length;
+ document.getElementById('pia-count').innerText = total;
+ updateSortHeaders();
 }
 
 function renderResultados(){
@@ -885,7 +1224,12 @@ function renderResultados(){
  document.getElementById('mat-c-func').innerText = mc.func;
  document.getElementById('mat-c-str').innerText = mc.str;
  document.getElementById('mat-c-inc').innerText = mc.inc;
- document.getElementById('tbody-res').innerHTML = list.map(function(v){
+ // Paginação na tabela comparativa
+ var total = list.length;
+ pgRes.page = renderPager('pager-res', pgRes.page, total, 'goResPage');
+ var start = (pgRes.page-1)*PAGE_SIZE;
+ var pageList = list.slice(start, start+PAGE_SIZE);
+ document.getElementById('tbody-res').innerHTML = pageList.map(function(v){
   var c = calcPia(v); var t = v.m+v.a+v.d;
   var matCls = c.mat.indexOf('Plena')>-1?'mat-full':c.mat.indexOf('Funcional')>-1?'mat-func':c.mat.indexOf('Estruturada')>-1?'mat-str':'mat-inc';
   return '<tr><td><b>'+esc(v.nome)+'</b></td><td>'+esc(v.ana)+'</td><td>'+v.fte.toFixed(2).replace('.',',')+'</td><td>'+(v.vm+v.va).toLocaleString('pt-BR')+'</td><td>'+t+'</td><td>'+v.m+'/'+v.a+'/'+v.d+'</td><td>'+c.ae.toFixed(2).replace('.',',')+'%</td><td>'+c.av.toFixed(2).replace('.',',')+'%</td><td><b>'+c.am.toFixed(2).replace('.',',')+'%</b></td><td>'+c.dens.toFixed(2).replace('.',',')+'%</td><td><span class="mat-badge '+matCls+'">'+c.mat+'</span></td></tr>';
@@ -917,20 +1261,33 @@ function openForm(id){
   var v = db.pias.find(function(x){return String(x.id)===String(id);}); if(!v) return;
   document.getElementById('mf-name').innerText = 'Editando';
   document.getElementById('btn-delete').style.display = 'inline-flex';
-  ['nome','ger','ana','sub','item','crit','orig','stat','m','a','d','vm','va','fte','n','g','q','dir','desc','ia','anexos'].forEach(function(k){
+  ['nome','ger','ana','sub','item','crit','orig','stat','m','a','d','vm','va','fte','n','g','q','dir','desc','ia'].forEach(function(k){
    var el = document.getElementById('mf-'+k); if(el) el.value = v[k]||(typeof v[k]==='number'?0:'');
   });
+  document.getElementById('mf-dt-analise').value = v.dtAnalise||'';
+  document.getElementById('mf-dt-proxima').value = v.dtProxima||'';
+  document.getElementById('mf-anexo-po').value = v.anexoPO||'';
+  document.getElementById('mf-anexo-diag').value = v.anexoDiag||'';
+  document.getElementById('mf-anexo-bpm').value = v.anexoBPM||'';
+  document.getElementById('mf-tem-pa').checked = (v.temPA==='Sim');
   document.getElementById('mf-id').value = v.id;
  } else {
   document.getElementById('mf-name').innerText = 'Novo';
   document.getElementById('btn-delete').style.display = 'none';
-  ['nome','ger','ana','sub','item','orig','dir','desc','ia','anexos'].forEach(function(k){document.getElementById('mf-'+k).value='';});
+  ['nome','ger','ana','sub','item','orig','dir','desc','ia'].forEach(function(k){document.getElementById('mf-'+k).value='';});
   ['m','a','d','vm','va','fte'].forEach(function(k){document.getElementById('mf-'+k).value=0;});
+  ['anexo-po','anexo-diag','anexo-bpm'].forEach(function(k){document.getElementById('mf-'+k).value='';});
+  document.getElementById('mf-tem-pa').checked = false;
+  // Data análise = hoje, próxima = hoje + meses_proxima_analise
+  var hoje = new Date().toISOString().slice(0,10);
+  document.getElementById('mf-dt-analise').value = hoje;
+  autoNextAnalise();
   document.getElementById('mf-crit').selectedIndex=1;
   document.getElementById('mf-stat').selectedIndex=0;
   document.getElementById('mf-n').selectedIndex=0; document.getElementById('mf-g').selectedIndex=3; document.getElementById('mf-q').selectedIndex=0;
   document.getElementById('mf-id').value='';
  }
+ togglePASection();
  previewCalcs();
  document.getElementById('modal-form').classList.add('open');
  document.body.style.overflow='hidden';
@@ -938,6 +1295,42 @@ function openForm(id){
   var el = document.getElementById('mf-'+k);
   el.oninput = previewCalcs; el.onchange = previewCalcs;
  });
+}
+
+/* Auto calcula próxima análise: data análise + N meses (param) */
+function autoNextAnalise(){
+ var dtA = document.getElementById('mf-dt-analise').value;
+ if(!dtA) return;
+ var meses = db.params.meses_proxima_analise||6;
+ var d = new Date(dtA);
+ d.setMonth(d.getMonth() + meses);
+ document.getElementById('mf-dt-proxima').value = d.toISOString().slice(0,10);
+}
+
+/* Toggle section Plano de Ação */
+function togglePASection(){
+ var checked = document.getElementById('mf-tem-pa').checked;
+ document.getElementById('mf-pa-section').style.display = checked ? 'block' : 'none';
+ if(checked && currentId){
+  renderPAListForPIA(currentId);
+ } else if(checked && !currentId){
+  document.getElementById('mf-pa-list').innerHTML = '<p style="color:var(--mut);font-size:12px;font-style:italic;padding:8px">Salve o PIÁ primeiro para adicionar planos de ação.</p>';
+ }
+}
+
+/* Lista os planos de ação de um PIÁ dentro do modal */
+function renderPAListForPIA(piaId){
+ var planos = db.planos.filter(function(p){return String(p.piaId)===String(piaId);});
+ var el = document.getElementById('mf-pa-list');
+ if(!planos.length){
+  el.innerHTML = '<p style="color:var(--mut);font-size:12px;font-style:italic;padding:8px">Nenhum plano cadastrado. Clique em + Novo Plano.</p>';
+  return;
+ }
+ el.innerHTML = planos.map(function(p,i){
+  var globalIdx = db.planos.findIndex(function(x){return String(x.id)===String(p.id);});
+  var stCls = p.stat==='Concluído'?'pa-done':p.stat==='Em Andamento'?'pa-doing':p.stat==='Bloqueado'?'pa-blocked':'pa-todo';
+  return '<div class="pa-item"><div><div class="pa-title">'+esc(p.nome)+'</div><div class="pa-meta">'+esc(p.resp||'—')+' · Prazo: '+esc(p.prazo||'—')+' · <span class="pa-status '+stCls+'">'+p.stat+'</span></div></div><div class="pa-actions"><button class="btn btn-ghost btn-sm" onclick="openPAModal('+globalIdx+')">✏️</button></div></div>';
+ }).join('');
 }
 function previewCalcs(){
  var t = {
@@ -968,7 +1361,13 @@ function savePia(){
   m:parseInt(document.getElementById('mf-m').value)||0, a:parseInt(document.getElementById('mf-a').value)||0, d:parseInt(document.getElementById('mf-d').value)||0,
   vm:parseFloat(document.getElementById('mf-vm').value)||0, va:parseFloat(document.getElementById('mf-va').value)||0, fte:parseFloat(document.getElementById('mf-fte').value)||0,
   n:document.getElementById('mf-n').value, g:document.getElementById('mf-g').value, q:document.getElementById('mf-q').value,
-  dir:document.getElementById('mf-dir').value, desc:document.getElementById('mf-desc').value, ia:document.getElementById('mf-ia').value, anexos:document.getElementById('mf-anexos').value,
+  dir:document.getElementById('mf-dir').value, desc:document.getElementById('mf-desc').value, ia:document.getElementById('mf-ia').value,
+  dtAnalise:document.getElementById('mf-dt-analise').value,
+  dtProxima:document.getElementById('mf-dt-proxima').value,
+  anexoPO:document.getElementById('mf-anexo-po').value.trim(),
+  anexoDiag:document.getElementById('mf-anexo-diag').value.trim(),
+  anexoBPM:document.getElementById('mf-anexo-bpm').value.trim(),
+  temPA:document.getElementById('mf-tem-pa').checked ? 'Sim' : 'Não',
   dtUpd:today
  };
  if(currentId){
@@ -997,12 +1396,45 @@ function openView(id){
  var pm=t?(v.m/t*100).toFixed(1):0, pa=t?(v.a/t*100).toFixed(1):0, pd=t?(v.d/t*100).toFixed(1):0;
  var matCls = c.mat.indexOf('Plena')>-1?'mat-full':c.mat.indexOf('Funcional')>-1?'mat-func':c.mat.indexOf('Estruturada')>-1?'mat-str':'mat-inc';
  document.getElementById('mv-name').innerText = v.nome;
+
+ // Anexos clicáveis
+ var anxHtml = '<div class="anexo-icons">';
+ var hasAnx = false;
+ if(v.anexoPO){anxHtml += '<a href="#" onclick="openViewer(\''+esc(v.anexoPO)+'\',\'Anexo PO — '+esc(v.nome)+'\');return false" class="anexo-icon po">📘 <span class="anx-lbl">PO</span></a>'; hasAnx=true;}
+ if(v.anexoDiag){anxHtml += '<a href="#" onclick="openViewer(\''+esc(v.anexoDiag)+'\',\'Diagnóstico — '+esc(v.nome)+'\');return false" class="anexo-icon diag">📊 <span class="anx-lbl">Diagnóstico</span></a>'; hasAnx=true;}
+ if(v.anexoBPM){anxHtml += '<a href="#" onclick="openViewer(\''+esc(v.anexoBPM)+'\',\'BPM — '+esc(v.nome)+'\');return false" class="anexo-icon bpm">🔄 <span class="anx-lbl">BPM</span></a>'; hasAnx=true;}
+ anxHtml += '</div>';
+ if(!hasAnx) anxHtml = '<span class="anexo-empty">Nenhum anexo cadastrado</span>';
+
+ // Planos de ação vinculados
+ var planosVinc = db.planos.filter(function(p){return String(p.piaId)===String(v.id);});
+ var planosHtml = '';
+ if(planosVinc.length){
+  planosHtml = '<div class="info-block" style="border-left-color:var(--brand-purple)"><h4>🎯 Planos de Ação Vinculados ('+planosVinc.length+')</h4><div class="pa-list">';
+  planosVinc.forEach(function(p){
+   var stCls = p.stat==='Concluído'?'pa-done':p.stat==='Em Andamento'?'pa-doing':p.stat==='Bloqueado'?'pa-blocked':'pa-todo';
+   planosHtml += '<div class="pa-item"><div><div class="pa-title">'+esc(p.nome)+'</div><div class="pa-meta">'+esc(p.resp||'—')+' · Prazo: '+esc(p.prazo||'—')+' · <span class="pa-status '+stCls+'">'+esc(p.stat)+'</span></div></div></div>';
+  });
+  planosHtml += '</div></div>';
+ } else if(v.temPA==='Sim'){
+  planosHtml = '<div class="info-block" style="border-left-color:var(--brand-purple)"><h4>🎯 Plano de Ação</h4><p style="font-size:12px;color:var(--mut);font-style:italic">Marcado como "tem plano" mas nenhum plano cadastrado. Edite o PIÁ para adicionar.</p></div>';
+ }
+
  var html='<div class="info-block"><h4>📌 Identificação</h4><div class="info-grid">'
   +'<div class="info-item"><div class="lbl">Área</div><div class="val" style="font-size:12.5px">'+esc(v.ger)+'</div></div>'
   +'<div class="info-item"><div class="lbl">Serviço</div><div class="val" style="font-size:12.5px">'+esc(v.ana)+'</div></div>'
   +'<div class="info-item"><div class="lbl">Criticidade</div><div class="val">'+esc(v.crit)+'</div></div>'
   +'<div class="info-item"><div class="lbl">Status</div><div class="val" style="font-size:12.5px">'+esc(v.stat)+'</div></div></div>'
-  +(v.desc?'<p style="font-size:12.5px;color:var(--mut);margin-top:10px">'+esc(v.desc)+'</p>':'')+'</div>'
+  +(v.desc?'<div style="margin-top:10px"><div class="lbl" style="font-size:10px;color:var(--mut);text-transform:uppercase;font-weight:700;margin-bottom:4px">📝 Descrição do Processo</div><p style="font-size:12.5px;color:var(--text);line-height:1.5">'+esc(v.desc)+'</p></div>':'')
+  +(v.ia?'<div style="margin-top:10px"><div class="lbl" style="font-size:10px;color:var(--mut);text-transform:uppercase;font-weight:700;margin-bottom:4px">💭 Considerações do Processo</div><p style="font-size:12.5px;color:var(--text);line-height:1.5">'+esc(v.ia)+'</p></div>':'')
+  +'</div>'
+  // Datas
+  +'<div class="info-block" style="border-left-color:var(--brand-purple-d)"><h4>📅 Ciclo de Análise</h4><div class="info-grid" style="grid-template-columns:1fr 1fr">'
+  +'<div class="info-item"><div class="lbl">Data desta análise</div><div class="val">'+(v.dtAnalise?fmtDate(v.dtAnalise):'—')+'</div></div>'
+  +'<div class="info-item"><div class="lbl">Próxima análise</div><div class="val">'+(v.dtProxima?fmtDate(v.dtProxima):'—')+'</div></div>'
+  +'</div></div>'
+  // Anexos
+  +'<div class="info-block" style="border-left-color:var(--brand-blue-d)"><h4>📎 Anexos</h4>'+anxHtml+'</div>'
   +'<div class="info-block" style="border-left-color:var(--brand-purple)"><h4>📊 Volume & FTE</h4><div class="info-grid">'
   +'<div class="info-item"><div class="lbl">FTE</div><div class="val">'+v.fte.toFixed(2).replace('.',',')+'</div></div>'
   +'<div class="info-item"><div class="lbl">Vol.M</div><div class="val">'+v.vm.toLocaleString('pt-BR')+'</div></div>'
@@ -1014,9 +1446,17 @@ function openView(id){
   +'<div class="info-item"><div class="lbl">AE</div><div class="val" style="color:var(--brand-blue)">'+c.ae.toFixed(2).replace('.',',')+'%</div></div>'
   +'<div class="info-item"><div class="lbl">AV</div><div class="val" style="color:var(--brand-purple)">'+c.av.toFixed(2).replace('.',',')+'%</div></div>'
   +'<div class="info-item"><div class="lbl">% Aut.</div><div class="val">'+c.am.toFixed(2).replace('.',',')+'%</div></div>'
-  +'<div class="info-item"><div class="lbl">Maturidade</div><div class="val"><span class="mat-badge '+matCls+'">'+c.mat+'</span></div></div></div></div>';
+  +'<div class="info-item"><div class="lbl">Maturidade</div><div class="val"><span class="mat-badge '+matCls+'">'+c.mat+'</span></div></div></div></div>'
+  + planosHtml;
  document.getElementById('mv-body').innerHTML = html;
  document.getElementById('modal-view').classList.add('open'); document.body.style.overflow='hidden';
+}
+
+function fmtDate(iso){
+ if(!iso) return '—';
+ var d = new Date(iso);
+ if(isNaN(d.getTime())) return esc(iso);
+ return d.toLocaleDateString('pt-BR');
 }
 function editFromView(){closeModal('modal-view'); openForm(editingFromView);}
 function closeModal(id){document.getElementById(id).classList.remove('open'); document.body.style.overflow='';}
@@ -1057,6 +1497,7 @@ function loadParams(){
  set('p-corte-ae',p.corte_AE_maturidade); set('p-corte-av',p.corte_AV_maturidade);
  set('p-corte-dens-alta',p.corte_densidade_alta); set('p-corte-dens-crit',p.corte_densidade_critica);
  set('p-coef-fte',p.coef_fte_evitado||1); set('p-horas',p.horas_fte_ano); set('p-custo',p.custo_medio_fte_anual);
+ set('p-meses-analise',p.meses_proxima_analise||6);
  set('p-q1',p.peso_Q_execucao_etapas); set('p-q2',p.peso_Q_intervencao_humana); set('p-q3',p.peso_Q_integracao_sistemas);
  set('p-q4',p.peso_Q_tratamento_excecoes); set('p-q5',p.peso_Q_principal_tecnologia);
  set('p-g1',p.peso_G_volumetria); set('p-g2',p.peso_G_execucao_processo); set('p-g3',p.peso_G_padronizacao);
@@ -1070,6 +1511,7 @@ function saveParams(){
  db.params.corte_AE_maturidade=g('p-corte-ae'); db.params.corte_AV_maturidade=g('p-corte-av');
  db.params.corte_densidade_alta=g('p-corte-dens-alta'); db.params.corte_densidade_critica=g('p-corte-dens-crit');
  db.params.coef_fte_evitado=g('p-coef-fte'); db.params.horas_fte_ano=g('p-horas'); db.params.custo_medio_fte_anual=g('p-custo');
+ db.params.meses_proxima_analise=g('p-meses-analise')||6;
  db.params.peso_Q_execucao_etapas=g('p-q1'); db.params.peso_Q_intervencao_humana=g('p-q2');
  db.params.peso_Q_integracao_sistemas=g('p-q3'); db.params.peso_Q_tratamento_excecoes=g('p-q4');
  db.params.peso_Q_principal_tecnologia=g('p-q5');
@@ -1098,6 +1540,7 @@ function openTipsEditor(){
   'corte-ae':'corte_AE_maturidade',
   'corte-av':'corte_AV_maturidade',
   'cortes-dens':'🔀 Cortes de Densidade',
+  'analise':'📅 Ciclo de Análise',
   'fte-evit':'💼 FTE Evitado (Calculadora)',
   'pesos-q':'📊 Pesos Q — Qualidade',
   'pesos-g':'📈 Pesos G — Grau',
@@ -1211,16 +1654,284 @@ function deleteUsuario(){
  toast('✓ Excluído','success');
 }
 
+/* ===== VIEWER DE ANEXOS ===== */
+function openViewer(url, title){
+ if(!url){toast('⚠ Sem URL definida','err');return;}
+ document.getElementById('viewer-title').innerText = '👁 '+title;
+ document.getElementById('viewer-open-new').href = url;
+ var body = document.getElementById('viewer-body');
+ var lower = url.toLowerCase();
+ var isPDF = lower.indexOf('.pdf')>-1;
+ var isHTML = lower.indexOf('.html')>-1 || lower.indexOf('.htm')>-1;
+ var isImage = /\.(png|jpg|jpeg|gif|svg|webp)/.test(lower);
+ var isOffice = /\.(docx?|xlsx?|pptx?)/.test(lower);
+ // Detecta SharePoint / OneDrive → não incorpora (bloqueia iframe)
+ var isSPO = lower.indexOf('sharepoint.com')>-1 || lower.indexOf('onedrive.com')>-1 || lower.indexOf('1drv.ms')>-1;
+ if(isPDF && !isSPO){
+  body.innerHTML = '<iframe src="'+esc(url)+'" title="PDF"></iframe>';
+ } else if(isHTML && !isSPO){
+  body.innerHTML = '<iframe src="'+esc(url)+'" title="HTML"></iframe>';
+ } else if(isImage && !isSPO){
+  body.innerHTML = '<div style="padding:20px;text-align:center;background:#F7F8FC;height:100%;overflow:auto"><img src="'+esc(url)+'" style="max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.1)"/></div>';
+ } else if(isOffice && !isSPO){
+  // Usa Office Online viewer
+  var officeUrl = 'https://view.officeapps.live.com/op/embed.aspx?src='+encodeURIComponent(url);
+  body.innerHTML = '<iframe src="'+esc(officeUrl)+'" title="Office"></iframe>';
+ } else {
+  // SharePoint/OneDrive ou tipo não suportado
+  var msg = isSPO ? 'Este arquivo está no <b>SharePoint/OneDrive</b> corporativo, que <b>não permite visualização embutida</b> por segurança.' : 'Tipo de arquivo não suportado para preview.';
+  body.innerHTML = '<div class="viewer-fallback">'
+   +'<div class="icon">🔒</div>'
+   +'<h3>Preview não disponível</h3>'
+   +'<p>'+msg+'</p>'
+   +'<a href="'+esc(url)+'" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px">↗ Abrir arquivo em nova aba</a>'
+   +'<p style="margin-top:20px;font-size:11.5px">URL: <code style="background:#F7F8FC;padding:4px 8px;border-radius:4px;font-size:11px">'+esc(url)+'</code></p>'
+   +'</div>';
+ }
+ document.getElementById('modal-viewer').classList.add('open');
+ document.body.style.overflow='hidden';
+}
+
+/* ===== CRUD PLANO DE AÇÃO ===== */
+function openPAModal(idx, piaIdFromForm){
+ var pa;
+ if(idx==null){
+  var piaId = piaIdFromForm||currentId||'';
+  var piaNome = '';
+  if(piaId){
+   var pia = db.pias.find(function(x){return String(x.id)===String(piaId);});
+   if(pia) piaNome = pia.nome;
+  }
+  pa = {id:'',piaId:piaId,piaNome:piaNome,nome:'',desc:'',resp:'',prazo:'',stat:'A Fazer'};
+ } else {
+  pa = db.planos[idx];
+ }
+ document.getElementById('pa-idx').value = idx==null?'':idx;
+ document.getElementById('btn-del-pa').style.display = idx==null?'none':'inline-flex';
+ // Popular select de PIAs
+ var opts = db.pias.map(function(v){return '<option value="'+esc(v.id)+'">'+esc(v.nome)+'</option>';}).join('');
+ document.getElementById('pa-piasel').innerHTML = opts;
+ document.getElementById('pa-piasel').value = pa.piaId;
+ document.getElementById('pa-nome').value = pa.nome;
+ document.getElementById('pa-desc').value = pa.desc;
+ document.getElementById('pa-resp').value = pa.resp;
+ document.getElementById('pa-prazo').value = pa.prazo;
+ document.getElementById('pa-stat').value = pa.stat;
+ document.getElementById('modal-pa').classList.add('open');
+ document.body.style.overflow='hidden';
+}
+
+function savePA(){
+ var idx = document.getElementById('pa-idx').value;
+ var piaId = document.getElementById('pa-piasel').value;
+ var pia = db.pias.find(function(x){return String(x.id)===String(piaId);});
+ var nome = document.getElementById('pa-nome').value.trim();
+ if(!nome){toast('⚠ Nome do plano obrigatório','err');return;}
+ if(!piaId){toast('⚠ Vincule a um PIÁ','err');return;}
+ var today = new Date().toISOString().slice(0,10);
+ var pa = {
+  id: idx===''?(Date.now()+Math.random()):db.planos[parseInt(idx)].id,
+  piaId: piaId,
+  piaNome: pia?pia.nome:'',
+  nome: nome,
+  desc: document.getElementById('pa-desc').value,
+  resp: document.getElementById('pa-resp').value,
+  prazo: document.getElementById('pa-prazo').value,
+  stat: document.getElementById('pa-stat').value,
+  dtCad: idx===''?today:(db.planos[parseInt(idx)].dtCad||today),
+  dtUpd: today
+ };
+ if(idx===''){db.planos.push(pa); toast('✓ Plano criado','success');}
+ else {db.planos[parseInt(idx)] = pa; toast('✓ Plano atualizado','success');}
+ // Se PIA vinculado não tinha flag, ativa
+ if(pia && pia.temPA !== 'Sim'){
+  pia.temPA = 'Sim';
+ }
+ closeModal('modal-pa');
+ renderPlanosAcao();
+ // Se estava editando dentro do form do PIÁ, atualiza a lista
+ if(document.getElementById('modal-form').classList.contains('open') && currentId){
+  renderPAListForPIA(currentId);
+ }
+}
+
+function deletePA(){
+ var idx = parseInt(document.getElementById('pa-idx').value);
+ if(!confirm('Excluir este plano de ação?')) return;
+ db.planos.splice(idx,1);
+ closeModal('modal-pa');
+ renderPlanosAcao();
+ if(document.getElementById('modal-form').classList.contains('open') && currentId){
+  renderPAListForPIA(currentId);
+ }
+ toast('✓ Excluído','success');
+}
+
+/* ===== RENDER PLANOS DE AÇÃO (aba) ===== */
+function filterPlanos(){
+ var fp=(document.getElementById('fpa-pia').value||'').trim().toLowerCase();
+ var fr=(document.getElementById('fpa-resp').value||'').trim().toLowerCase();
+ var fs=document.getElementById('fpa-stat').value;
+ return db.planos.filter(function(p){
+  if(fp && (p.piaNome||'').toLowerCase().indexOf(fp)===-1) return false;
+  if(fr && (p.resp||'').toLowerCase().indexOf(fr)===-1) return false;
+  if(fs && p.stat!==fs) return false;
+  return true;
+ });
+}
+
+function renderPlanosAcao(){
+ var list = filterPlanos();
+ document.getElementById('badge-pa').innerText = db.planos.length;
+ // KPIs
+ var st = {'A Fazer':0,'Em Andamento':0,'Concluído':0,'Bloqueado':0};
+ list.forEach(function(p){if(st[p.stat]!=null) st[p.stat]++;});
+ var atrasados = list.filter(function(p){return p.stat!=='Concluído' && p.prazo && new Date(p.prazo)<new Date();}).length;
+ document.getElementById('kpis-pa').innerHTML =
+   '<div class="kpi"><b>'+list.length+'</b><span>Total</span></div>'
+  +'<div class="kpi"><b>'+st['A Fazer']+'</b><span>A Fazer</span></div>'
+  +'<div class="kpi"><b>'+st['Em Andamento']+'</b><span>Em Andamento</span></div>'
+  +'<div class="kpi"><b>'+st['Concluído']+'</b><span>Concluídos</span></div>'
+  +'<div class="kpi" style="border-color:var(--red)"><b style="color:var(--red)">'+atrasados+'</b><span>Atrasados</span></div>';
+ // Kanban
+ var cols = {'A Fazer':[], 'Em Andamento':[], 'Concluído':[], 'Bloqueado':[]};
+ list.forEach(function(p){if(cols[p.stat]) cols[p.stat].push(p);});
+ var kb = document.getElementById('kanban-pa');
+ var kbHtml = '';
+ [['A Fazer','todo','📋'],['Em Andamento','doing','🔄'],['Concluído','done','✅'],['Bloqueado','blocked','🚫']].forEach(function(c){
+  var status = c[0], cls = c[1], icon = c[2];
+  kbHtml += '<div class="kb-col '+cls+'"><h3>'+icon+' '+status+' <span class="kb-count">'+cols[status].length+'</span></h3>';
+  cols[status].forEach(function(p){
+   var idx = db.planos.findIndex(function(x){return String(x.id)===String(p.id);});
+   var late = p.stat!=='Concluído' && p.prazo && new Date(p.prazo)<new Date();
+   kbHtml += '<div class="kb-card" onclick="openPAModal('+idx+')">'
+    +'<div class="kb-title">'+esc(p.nome)+'</div>'
+    +(p.desc?'<div class="kb-desc">'+esc(p.desc)+'</div>':'')
+    +'<div class="kb-meta">'
+    +(p.piaNome?'<span class="kb-pia" title="'+esc(p.piaNome)+'">'+esc(p.piaNome.length>25?p.piaNome.substring(0,25)+'…':p.piaNome)+'</span>':'')
+    +(p.resp?'<span class="kb-owner">👤 '+esc(p.resp)+'</span>':'')
+    +(p.prazo?'<span class="kb-date'+(late?' late':'')+'">📅 '+fmtDate(p.prazo)+'</span>':'')
+    +'</div></div>';
+  });
+  if(!cols[status].length) kbHtml += '<p style="text-align:center;color:var(--mut);font-size:11px;padding:20px;font-style:italic">Nenhum plano</p>';
+  kbHtml += '</div>';
+ });
+ kb.innerHTML = kbHtml;
+ // Tabela
+ var tb = document.getElementById('tbody-pa');
+ if(!list.length) tb.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:30px;color:var(--mut)">Nenhum plano encontrado.</td></tr>';
+ else tb.innerHTML = list.map(function(p){
+  var idx = db.planos.findIndex(function(x){return String(x.id)===String(p.id);});
+  var stCls = p.stat==='Concluído'?'pa-done':p.stat==='Em Andamento'?'pa-doing':p.stat==='Bloqueado'?'pa-blocked':'pa-todo';
+  var late = p.stat!=='Concluído' && p.prazo && new Date(p.prazo)<new Date();
+  return '<tr><td><b>'+esc(p.nome)+'</b></td><td>'+esc(p.piaNome||'—')+'</td><td>'+esc(p.desc||'—')+'</td><td>'+esc(p.resp||'—')+'</td><td'+(late?' style="color:var(--red);font-weight:700"':'')+'>'+fmtDate(p.prazo)+'</td><td><span class="pa-status '+stCls+'">'+esc(p.stat)+'</span></td><td><button class="btn btn-ghost btn-sm" onclick="openPAModal('+idx+')">✏️</button></td></tr>';
+ }).join('');
+}
+
+function clearFiltersPA(){
+ ['fpa-pia','fpa-resp','fpa-stat'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
+ renderPlanosAcao();
+}
+
+function exportPlanosAcao(){
+ if(!db.loaded){toast('⚠ Faça login primeiro','err');return;}
+ var list = filterPlanos();
+ if(!list.length){toast('⚠ Nenhum plano para exportar','err');return;}
+ var rows = list.map(function(p){
+  return {
+   'ID':p.id,'PIÁ Vinculado':p.piaNome,
+   'Nome do Plano':p.nome,'Descrição/Ação':p.desc,
+   'Responsável':p.resp,'Prazo':p.prazo,'Status':p.stat,
+   'Data Criação':p.dtCad,'Data Atualização':p.dtUpd
+  };
+ });
+ var wb = XLSX.utils.book_new();
+ XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(rows), 'Planos de Ação');
+ var stamp = new Date().toISOString().slice(0,10).replace(/-/g,'');
+ XLSX.writeFile(wb, 'Relatorio_PIA_PlanosAcao_'+stamp+'.xlsx');
+ toast('✓ '+list.length+' planos exportados','success');
+}
+
+/* ===== EXPORTAR RELATÓRIO EXCEL ===== */
+function exportRelatorio(origem){
+ if(!db.loaded){toast('⚠ Faça login primeiro','err');return;}
+ var pref = origem==='res'?'-r':'';
+ var list = filterList(pref);
+ if(origem==='base') list = applySortBase(list);
+ if(!list.length){toast('⚠ Nenhum registro para exportar','err');return;}
+ var rows = list.map(function(v){
+  var c = calcPia(v);
+  var t = v.m+v.a+v.d;
+  return {
+   'Processo':v.nome,
+   'Área':v.ger,
+   'Serviço':v.ana,
+   'Subserviço':v.sub,
+   'Item ServiceNow':v.item,
+   'Criticidade':v.crit,
+   'Status':v.stat,
+   'FTE (Média 2026)':v.fte,
+   'Volume Manual':v.vm,
+   'Volume Automatizado':v.va,
+   'Volume Total':v.vm+v.va,
+   'Etapas Manuais (M)':v.m,
+   'Etapas Automáticas (A)':v.a,
+   'Etapas Decisão (D)':v.d,
+   'Total Etapas':t,
+   'AE Estrutural (%)':Number(c.ae.toFixed(2)),
+   'AV Volumétrica (%)':Number(c.av.toFixed(2)),
+   '% Automação Média':Number(c.am.toFixed(2)),
+   'Densidade Decisória (%)':Number(c.dens.toFixed(2)),
+   'Maturidade':c.mat,
+   'Nível N':v.n,
+   'Grau G':v.g,
+   'Qualidade Q':v.q,
+   'Direcionador':v.dir,
+   'Descrição':v.desc,
+   'Consideração IA':v.ia
+  };
+ });
+ var wb = XLSX.utils.book_new();
+ var ws = XLSX.utils.json_to_sheet(rows);
+ var sheetName = origem==='base'?'PIÁs Cadastrados':'Comparativo Resultados';
+ XLSX.utils.book_append_sheet(wb, ws, sheetName);
+ // Aba de metadados
+ var meta = [
+  {'Campo':'Origem','Valor':sheetName},
+  {'Campo':'Data extração','Valor':new Date().toLocaleString('pt-BR')},
+  {'Campo':'Total de registros','Valor':list.length},
+  {'Campo':'Filtro: Processo','Valor':document.getElementById('f-proc'+pref)?.value||'(nenhum)'},
+  {'Campo':'Filtro: Área','Valor':document.getElementById('f-ger'+pref)?.value||'(nenhum)'},
+  {'Campo':'Filtro: Serviço','Valor':document.getElementById('f-ana'+pref)?.value||'(nenhum)'},
+  {'Campo':'Filtro: Item ServiceNow','Valor':document.getElementById('f-item'+pref)?.value||'(nenhum)'},
+  {'Campo':'Filtro: Maturidade','Valor':document.getElementById('f-mat'+pref)?.value||'(nenhum)'},
+  {'Campo':'Filtro: Status','Valor':document.getElementById('f-stat'+pref)?.value||'(nenhum)'}
+ ];
+ XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(meta), 'Filtros aplicados');
+ var stamp = new Date().toISOString().slice(0,10).replace(/-/g,'');
+ var fname = 'Relatorio_PIA_'+(origem==='base'?'Base':'Resultados')+'_'+stamp+'.xlsx';
+ XLSX.writeFile(wb, fname);
+ toast('✓ Relatório exportado: '+list.length+' registros','success');
+}
+
 /* ===== HELPERS ===== */
 function toast(msg,tipo){var el=document.getElementById('toast');el.className='toast show '+(tipo||'');el.innerText=msg;setTimeout(function(){el.className='toast';},3500);}
-function clearFilters(){document.getElementById('f-ger').value='';document.getElementById('f-ana').value='';document.getElementById('f-stat').value='';renderPias();}
-function clearFiltersRes(){document.getElementById('f-ger-r').value='';document.getElementById('f-ana-r').value='';document.getElementById('f-stat-r').value='';renderResultados();}
+function clearFilters(){
+ ['f-proc','f-ger','f-ana','f-item','f-mat','f-stat'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
+ pgBase.page = 1;
+ renderPias();
+}
+function clearFiltersRes(){
+ ['f-proc-r','f-ger-r','f-ana-r','f-item-r','f-mat-r','f-stat-r'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
+ pgRes.page = 1;
+ renderResultados();
+}
 function setTab(el,id){
  document.querySelectorAll('.nav-sub-a').forEach(function(t){t.classList.remove('active');});
  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active');});
  el.classList.add('active');
  document.getElementById(id).classList.add('active');
- var lbl={'p-base':'Base e Análises','p-res':'Resultados','p-calc':'Calculadora','p-par':'Parâmetros'};
+ var lbl={'p-base':'Base e Análises','p-res':'Resultados','p-planos':'Planos de Ação','p-calc':'Calculadora','p-par':'Parâmetros'};
  document.getElementById('crumb-tab').innerText = lbl[id];
  window.scrollTo(0,0);
 }
